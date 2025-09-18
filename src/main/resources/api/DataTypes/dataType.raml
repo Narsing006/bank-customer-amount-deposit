@@ -1,0 +1,17 @@
+#%RAML 1.0 DataType
+properties:
+        accountNum:
+          required: true
+          type: string
+          maxLength: 10
+          minLength: 10
+        bank:
+          required: true
+          enum:
+            - ICICI
+            - AXIS
+            - SBI
+            - HDFC
+        depositAmount:
+          required: true
+          type: integer
