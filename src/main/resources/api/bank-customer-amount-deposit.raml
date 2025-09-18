@@ -1,0 +1,27 @@
+#%RAML 1.0
+title: Bank-Customer-amount-deposit
+version: v1
+protocols:
+  - HTTP
+  - HTTPS
+
+mediaType: 
+- application/json
+
+securitySchemes:
+  secure: !include Security/securityScheme.raml
+securedBy:
+  - secure
+
+/deposit:
+  put:
+    body:
+      type: !include DataTypes/dataType.raml
+      example: !include examples/example.raml
+    responses:
+      200:
+        body:
+          application/json:
+            example: !include examples/successResponseExample.raml
+
+    
